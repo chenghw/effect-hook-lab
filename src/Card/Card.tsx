@@ -8,18 +8,16 @@ export default function Card(props: { data: CardType }) {
 
 
     const handleClick = () => {
-        if (clickable) {
-            setShowing("back")
-        }
+        clickable && setShowing("back")
     }
 
     return (
         <div className="Card" >
             <div className={`card-front ${showing === "back" ? "hidden" : ""}`} onClick={handleClick}>
-                <p className = "card-value">{props.data.value}</p>
+                <p className="card-value">{props.data.value}</p>
             </div>
             <div className={`card-back ${showing === "front" ? "hidden" : ""}`}>
-               {props.data.question}
+                <p className="card-question">{props.data.question}</p>
             </div>
         </div>
     )
