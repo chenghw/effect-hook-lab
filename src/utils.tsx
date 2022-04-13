@@ -23,7 +23,7 @@ export const cleanData = (data: APIData) => {
     )
 
     // filters out any categories with incomplete sets of cards
-    const finalData: any = {}
+    let finalData: any = {}
     for (var category in cleanedData) {
         let countValues = 0
         cleanedData[category].forEach((card: any) => {
@@ -34,8 +34,8 @@ export const cleanData = (data: APIData) => {
         if (countValues == 5) {
             finalData[category] = cleanedData[category]
         }
-
     }
+
     return finalData
 }
 
