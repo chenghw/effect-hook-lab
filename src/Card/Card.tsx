@@ -16,10 +16,10 @@ export default function Card(props: { data: CardType }) {
     return (
         <div className="Card" >
             <div className={`card-front ${showing === "back" ? "hidden" : ""}`} onClick={handleClick}>
-                {/* CARD VALUE HERE */}
+                <p className = "card-value">{props.data.value}</p>
             </div>
             <div className={`card-back ${showing === "front" ? "hidden" : ""}`}>
-                {/* CARD QUESTION HERE */}
+               {props.data.question}
             </div>
         </div>
     )
